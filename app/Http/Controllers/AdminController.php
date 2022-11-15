@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class AdminController extends Controller
+{
+    
+
+    public function admin_dashboard()
+    {
+        $set = $this->set();
+        $set['page'] = "Home page";
+        return view('frontend.index', compact('set'));
+    }
+}
