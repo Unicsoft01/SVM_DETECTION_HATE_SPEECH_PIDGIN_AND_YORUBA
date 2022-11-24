@@ -66,6 +66,12 @@
               <span class="menu-title">Switch to Pidgin</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('recent_hate')}}">
+              <i class="icon-paper menu-icon"></i>
+              <span class="menu-title">recent Hate speeches</span>
+            </a>
+          </li>
           @else()
           <li class="nav-item">
             <a class="nav-link" href="{{route('yoruba')}}">

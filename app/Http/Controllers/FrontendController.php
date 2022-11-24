@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Setting;
+use App\Models\Yoruba;
 use Illuminate\Support\Str;
-// use App\Http\Controllers\Verify_pidgin;
+use App\Http\Controllers\Yoruba_LibController;
 
 
 class FrontendController extends Controller
@@ -35,18 +36,44 @@ class FrontendController extends Controller
         $set['page'] = "Yourba page";
         return view('frontend.Yoruba', compact('set'));
     }
-    public function yoruba_process(Request $request)
+
+    public function recent_hate()
     {
-        return $request;
+        $set = $this->set();
+        $set['page'] = "Yourba page";
+        return view('frontend.recent', compact('set'));
     }
 
+    public function yoruba_process(Request $request)
+    {
+        $hate_words = Yoruba_LibController::library();
+
+        if (Str::contains($request->text, $hate_words))
+       {
+           // return "Your text is a hate speech because it contains hate words!";
+            return back()->with('error','Your inputs contains hate word(s)');
+       }
+       else
+       {
+            return back()->with('success','Your inputs are free of hate words!');
+        // return "Clean texts";
+       }
+    }
+
+
+
+
+
+// DB::table('users')
+// ->where('id', $user->id)
+// ->update(['active' => true]);
 
     public function pidgin_process(Request $request)
     {
         // proceed if input is like pidgin
         if (Verify_pidgin::pidgin_accuracy($request->text))
         {
-            $hate_words = ["mumu", "idiot", "no get sense", "no get shame", "animal", "fuck", "goat", "collect", "bastard", "swear"];
+            $hate_words = ["kill you", "mumu", "idiot", "no get sense", "no get shame", "animal", "fuck", "goat", "collect", "bastard", "swear", "no get", "agboro", "agbero", "wahalla too much","get out"];
 
                 if (Str::contains($request->text, $hate_words))
                {
@@ -76,30 +103,30 @@ class FrontendController extends Controller
     
 }
 
-            // $text = "jdkddehd"
-            // $regex = '/AWe/i';
-            // for ($i=0; $i < $hate_words; $i++)
-            // { 
-            //      $regex = "/$hate_words[$i]/i";
-            //     $occurance = Verify_pidgin::isHate($request->text, $regex);
+// $text = "jdkddehd"
+// $regex = '/AWe/i';
+// for ($i=0; $i < $hate_words; $i++)
+// { 
+//      $regex = "/$hate_words[$i]/i";
+//     $occurance = Verify_pidgin::isHate($request->text, $regex);
 
-            //     if(count($occurance) > 0)
-            //     {
-            //         foreach($occurance as $occur)
-            //         {
-            //             echo $occur;
-            //         }
-            //     }
-            // }
+//     if(count($occurance) > 0)
+//     {
+//         foreach($occurance as $occur)
+//         {
+//             echo $occur;
+//         }
+//     }
+// }
 
-       //  $c1 = [
-       //      "idiot",
-       //      "mumu",
-       //      "big head",
-       //      "fool"
-       //  ];
+//  $c1 = [
+//      "idiot",
+//      "mumu",
+//      "big head",
+//      "fool"
+//  ];
 
-       // if (Str::contains($request, $c1)) {
-       //     return "Your text is a hate speech because it contains";
-       // }
-       //  // return $request;
+// if (Str::contains($request, $c1)) {
+//     return "Your text is a hate speech because it contains";
+// }
+//  // return $request;

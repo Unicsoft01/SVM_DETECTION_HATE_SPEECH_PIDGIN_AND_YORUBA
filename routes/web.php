@@ -31,6 +31,8 @@ use App\Http\Controllers\AppointmentController;
 Route::controller(FrontendController::class)->group(function (){
     Route::get('/', 'Index')->name('home');
     Route::get('/model/yoruba', 'yoruba')->name('yoruba');
+    Route::get('/model/yoruba/Recent/Hate', 'recent_hate')->name('recent_hate');
+    
     Route::get('/model/pidgin-english', 'pidgin')->name('pidgin');
 
     Route::post('pidgin-english', 'pidgin_process')->name('pidgin.submit_docker');
@@ -41,7 +43,7 @@ Route::controller(FrontendController::class)->group(function (){
 
 
 
-
+// recent_hate
 
 
 require __DIR__.'/auth.php';

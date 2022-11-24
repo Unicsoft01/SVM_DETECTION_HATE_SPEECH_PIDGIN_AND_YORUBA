@@ -27,7 +27,16 @@ class Verify_pidgin extends Controller
             "reason any matter",
             "comfirm the levels",
             "the waka",
-            "collect am"
+            "collect am",
+            "wahalla",
+            "oyo",
+            "get head",
+            "shebi",
+            "self",
+            "no balance",
+            "say",
+            "jare",
+            "you be"
         ];
 
         // $subject = "how your mumu  boy";
