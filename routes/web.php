@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\FrontendController;
-// use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AppointmentController;
 // use App\Http\Controllers\AdminController;
 // use App\Http\Controllers\UsersController;
 
@@ -29,39 +30,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(FrontendController::class)->group(function (){
     Route::get('/', 'Index')->name('home');
-    Route::get('/about', 'about')->name('about');
-    Route::get('/login', 'Index')->name('login');
-    Route::get('/register', 'Index')->name('register');
-    Route::get('/terms_of_service', 'terms')->name('user.terms');
-    Route::get('/privacy', 'privacy')->name('privacy');
-    Route::get('/page/{id}', 'Index');
-    // Route::get('/contact', 'Index')->name('contact-submit');
-    // Route::get('/contact', 'ContactPage')->name('contact');
-    // Route::post('/contact/Store', 'ContactStore')->name('contact.store');
-    Route::get('faqs', 'Faq')->name('faqs');
-});
+    Route::get('/model/yoruba', 'yoruba')->name('yoruba');
+    Route::get('/model/pidgin-english', 'pidgin')->name('pidgin');
 
-Route::controller(ContactController::class)->group(function (){
-    Route::get('/contact', 'ContactPage')->name('contact');
-    Route::post('/contact/Store', 'ContactStore')->name('contact.store');
-});
+    Route::post('pidgin-english', 'pidgin_process')->name('pidgin.submit_docker');
 
-
-Route::controller(AdminController::class)->group(function (){
-    Route::get('/admin/dashboard', 'admin_dashboard')->name('admin.dashboard');
-    // Route::post('/contact/Store', 'ContactStore')->name('contact.store');
-});
-
-
-
-
-Route::middleware(['auth', 'verified'])->group(function () {
-
-    Route::controller(UsersController::class)->group(function (){
-        Route::get('/dashboard', 'Dashboard')->name('dashboard');
-    });
+    Route::post('yoruba', 'yoruba_process')->name('yoruba.submit_docker');
     
 });
+
 
 
 
