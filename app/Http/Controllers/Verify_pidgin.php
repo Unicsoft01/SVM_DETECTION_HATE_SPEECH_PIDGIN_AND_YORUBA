@@ -28,7 +28,7 @@ class Verify_pidgin extends Controller
             "comfirm the levels",
             "the waka",
             "collect am",
-            "wahalla",
+            "wahala",
             "oyo",
             "get head",
             "shebi",
@@ -36,6 +36,10 @@ class Verify_pidgin extends Controller
             "no balance",
             "say",
             "jare",
+            "sha",
+            "u no",
+            "wahalla",
+            "sabi",
             "you be"
         ];
 

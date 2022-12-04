@@ -35,7 +35,7 @@
                   <h4 class="card-title">Type in Yoruba texts only!</h4>
  @include('frontend.flash')
                   <p class="card-description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    Type in Yoruba words to See if there include hate words
                   </p>
                   <form action="{{route('yoruba.submit_docker')}}" method="post" class="form-inline">
                     @csrf

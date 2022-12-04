@@ -22,34 +22,34 @@
   <link rel="shortcut icon" href="{{url('/')}}/images/favicon.png" />
     <style type="text/css">
     .content-wrapper{
-      background-color: #D8E1EA;
+      /* background-color: #D8E1EA; */
+      background: rgba(48, 47, 47, 0.5);
     }
   </style>
 </head>
-<body>
+<body style="background: url('vendors/img-4.jpg') ; width: 100vw; background-repeat: no-repeat;background-position: left ;background-size: cover;">
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
       <div class="main-panel col-12">
-        <div class="content-wrapper">
+        <div class="content-wrapper" style="background: rgba(48, 47, 47, 0.5);">
           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
-              <div class="card">
+              <div class="card"  style="background: rgba(216, 216, 216, 0.514);">
                 <div class="card-body">
-                  <h1 class="card-title text-center">Welcome</h1>
+                  <h1 class="card-title text-center text-white">Welcome</h1>
                   <div class="row">
                     <div class="mt-5 pt-5 mx-auto mb-5 pb-5 text-center">
-                      
-                      <h3 style="height: 100%;">
+                      <h3 style="height: 100%;" class=" text-white">
                         Please select a model to Interact with
                       </h3>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-12 col-md-8  mx-auto ">
-                      <a href="{{route('pidgin')}}" class="btn btn-rounded btn-md col-12 mb-4 col-md-10 btn-inverse-info">Open SVM - Pidgin English</a>
+                      <a href="{{route('pidgin')}}" class="btn btn-rounded btn-md col-12 mb-4 col-md-10 btn-outline-info">Open SVM - Pidgin English</a>
                     </div>
                     <div class="col-12 col-md-8  mx-auto ">
-                      <a href="{{route('yoruba')}}" class="btn btn-rounded btn-md col-12 mb-4 col-md-10 btn-inverse-primary">Open SVM - Yoruba</a>
+                      <a href="{{route('yoruba')}}" class="btn btn-rounded btn-md col-12 mb-4 col-md-10 btn-outline-primary">Open SVM - Yoruba</a>
                     </div>
                   </div>
                   </div>

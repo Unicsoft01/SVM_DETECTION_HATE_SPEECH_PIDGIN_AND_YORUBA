@@ -6,7 +6,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Skydash Admin</title>
+  <title>{{ $set['page']}}</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{url('/')}}/vendors/feather/feather.css">
   <link rel="stylesheet" href="{{url('/')}}/vendors/ti-icons/css/themify-icons.css">
@@ -69,7 +69,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('recent_hate')}}">
               <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">recent Hate speeches</span>
+              <span class="menu-title">Captured Yoruba words</span>
             </a>
           </li>
           @else()
@@ -86,8 +86,8 @@
       </nav>
       <!-- partial -->
       <div class="main-panel">
-@yield('docker_doc')
-<!-- content-wrapper ends -->
+      @yield('docker_doc')
+      <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
